@@ -1,6 +1,5 @@
 using System.Globalization;
 using System.Reflection;
-using System.Text.Json;
 using System.Text.Json.Nodes;
 
 if (args is not [var arg])
@@ -46,7 +45,7 @@ else
 }
 
 var json = await GetJson();
-var root = JsonSerializer.Deserialize<JsonObject>(json)!;
+var root = JsonNode.Parse(json)!.AsObject();
 var levelsWithCoins = root["levelsWithCoins"]!.AsArray().Cast<JsonValue>().Select(v => v.GetValue<uint>());
 var levelsWithoutCoins = root["levelsWithoutCoins"]!.AsArray().Cast<JsonValue>().Select(v => v.GetValue<uint>());
 var presentLevels = levelsWithCoins.Concat(levelsWithoutCoins);

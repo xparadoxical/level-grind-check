@@ -6,6 +6,9 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <AssemblyName>lgcheck</AssemblyName>
+    <AssemblyVersion>1.0</AssemblyVersion>
+    <PublishSingleFile>true</PublishSingleFile>
+    <PublishSelfContained>false</PublishSelfContained>
   </PropertyGroup>
 
 </Project>
